@@ -4,4 +4,21 @@
   <artifactId>fr.jpa</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>test-jpa</name>
+  
+  	<properties>
+		<maven.compiler.sources>1.8</maven.compiler.sources>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	
+	<dependencies>
+	
+			<dependency>
+			<groupId>org.mariadb.jdbc</groupId>
+			<artifactId>mariadb-java-client</artifactId>
+			<version>1.1.7</version>
+		</dependency>
+
+	</dependencies>
+  
 </project>
