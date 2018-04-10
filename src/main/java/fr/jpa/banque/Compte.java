@@ -2,6 +2,8 @@ package fr.jpa.banque;
 
 import java.util.Set;
 
+import javax.persistence.Cacheable;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -56,6 +58,17 @@ public abstract class Compte {
 	 * Instantiates a new compte.
 	 */
 	public Compte() {
+	}
+
+	/**
+	 * @param numero
+	 * @param solde
+	 * @param clients
+	 * @param operations
+	 */
+	public Compte(String numero, Double solde) {
+		this.numero = numero;
+		this.solde = solde;
 	}
 
 	/**

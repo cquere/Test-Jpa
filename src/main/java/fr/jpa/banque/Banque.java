@@ -2,6 +2,7 @@ package fr.jpa.banque;
 
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -35,6 +36,14 @@ public class Banque {
 	 * Instantiates a new banque.
 	 */
 	public Banque() {
+	}
+
+	/**
+	 * @param nom
+	 * @param clients
+	 */
+	public Banque(String nom) {
+		this.nom = nom;
 	}
 
 	/**

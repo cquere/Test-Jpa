@@ -29,7 +29,7 @@ public class BibliothequeConsole {
 		
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("bibliotheque");
 		EntityManager em = emf.createEntityManager();
-		EntityTransaction et = em .getTransaction();
+		EntityTransaction et = em.getTransaction();
 			
 		et.begin();
 		

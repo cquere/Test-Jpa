@@ -2,6 +2,7 @@ package fr.jpa.banque;
 
 import java.time.LocalDate;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -49,6 +50,19 @@ public class Operation {
 	 */
 	public Operation() {
 
+	}
+
+	/**
+	 * @param date
+	 * @param montant
+	 * @param motif
+	 * @param compte
+	 */
+	public Operation(LocalDate date, Double montant, String motif, Compte compte) {
+		this.date = date;
+		this.montant = montant;
+		this.motif = motif;
+		this.compte = compte;
 	}
 
 	/**

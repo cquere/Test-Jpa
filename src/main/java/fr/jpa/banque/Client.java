@@ -3,6 +3,8 @@ package fr.jpa.banque;
 import java.time.LocalDate;
 import java.util.Set;
 
+import javax.persistence.Cacheable;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -22,6 +24,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="client")
+@Cacheable
 public class Client {
 	
 	/** The id. */
@@ -53,7 +56,7 @@ public class Client {
 	
 	/** The comptes. */
 	@ManyToMany
-	@JoinTable(name="client_compte",
+	@JoinTable(name="client_compte", 
 	joinColumns=@JoinColumn(name="ID_CLI", referencedColumnName="ID"),
 	inverseJoinColumns= @JoinColumn(name="ID_COM", referencedColumnName="ID")
 	)
@@ -63,6 +66,23 @@ public class Client {
 	 * Instantiates a new client.
 	 */
 	public Client() {
+	}
+
+	/**
+	 * @param nom
+	 * @param prenom
+	 * @param dateNaissance
+	 * @param adresse
+	 * @param banque
+	 * @param comptes
+	 */
+	public Client(String nom, String prenom, LocalDate dateNaissance, Adresse adresse, Banque banque) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		this.dateNaissance = dateNaissance;
+		this.adresse = adresse;
+		this.banque = banque;
 	}
 
 	/**
